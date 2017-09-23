@@ -1,0 +1,51 @@
+<!-- Details button -->
+                                    <td>
+                                        <form action="{{url('/details/' . $restaurant->resto_id)}}" method="GET">
+
+                                            <!--{{ method_field('DETAILS') }}-->
+
+                                            <button type="submit" id="details-{{ $restaurant->resto_id }}" class="btn btn-info">
+                                                Details
+                                            </button>
+                                        </form>
+                                    </td>
+                                    
+                                    <!-- Favourite button -->
+                                    @if (Auth::check())
+                                        <td>
+                                            <form action="{{url('/favourite_restaurant/' . $restaurant->resto_id)}}" method="POST">
+                                                
+                                                {{ csrf_field() }}
+                                                    
+                                                @if (!empty($restaurant->favourites->first(function($value, $key){
+                                                    return $value->user_id === Auth::user()->user_id;
+                                                })))
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" id="favourite_restaurant-{{ $restaurant->resto_id }}" class="btn btn-success">
+                                                        Unfavourite
+                                                    </button>
+                                                @else
+                                                    {{ method_field('PUT') }}
+                                                    <button type="submit" id="favourite_restaurant-{{ $restaurant->resto_id }}" class="btn btn-success">
+                                                        Favourite
+                                                    </button>
+                                            </form>
+                                        </td>
+                                        @endif
+                                    @endif
+                                    
+                                    <!-- Delete button -->
+                                    <!-- Could not get the delete button to apear for just the owner, says there is no $restaurant-user var -->
+                                    @if (Auth::user() == $restaurant->user)
+                                    <td>
+                                        <form action="{{url('/delete/' . $restaurant->resto_id)}}" method="POST">
+                                            
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+
+                                            <button type="submit" id="delete-{{ $restaurant->resto_id }}" class="btn btn-danger">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                    @endif

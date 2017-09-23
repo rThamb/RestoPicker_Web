@@ -1,0 +1,6 @@
+Missing Features:
+-Commenting reviews on Restaurants
+-Rating field and other details for Restaurants
+-API for creating Restaurants
+-Pagination of Views
+-Search?

@@ -1,0 +1,71 @@
+/* 
+    Created on : Dec 6, 2016, 10:43:25 PM
+    Author     : Jacob Brooker
+*/
+
+.ratingImg {
+    width: 20px;
+    height: 20px;
+    display:inline;
+}
+
+.inline {
+    display: inline;
+}
+
+.ratingImgLarge {
+    width: 40px;
+    height: 40px;
+    display:inline;
+}
+
+.priceRng {
+    color: green;
+    font-size: 14pt;
+    display: inline;
+    font-weight: bold;
+}
+
+.genre {
+    font-size: 14pt;
+    display: inline;
+}
+
+.restoImg {
+    height: 200px;
+}
+
+.restoImg img {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.restoImgDetail {
+    width:100%;
+}
+
+.restoImgDetail img {
+    margin: auto;
+    width: 100%;
+}
+
+.reviewBorder {
+    border: 2px solid blue;
+    padding: 10px;
+}
+
+.review {
+    display: inline;
+}
+
+.review h4 {
+    display: inline;
+}
+
+body {
+    background-image: url("/images/backdrop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
